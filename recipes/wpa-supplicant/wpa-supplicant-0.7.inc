@@ -63,7 +63,7 @@ do_install () {
 	cd ${D}${sysconfdir}/network/ && \
 	ln -sf ../if-pre-up.d/wpa-supplicant if-post-down.d/wpa-supplicant
 
-	if grep -q ^CONFIG_CTRL_IFACE_DBUS=y .config || grep -q ^CONFIG_CTRL_IFACE_DBUS_NEW=y .config; then
+	if grep -q ^CONFIG_CTRL_IFACE_DBUS=y ${S}/.config || grep -q ^CONFIG_CTRL_IFACE_DBUS_NEW=y ${S}/.config; then
 		install -d ${D}/${sysconfdir}/dbus-1/system.d
 		install -m 644 ${S}/dbus/dbus-wpa_supplicant.conf ${D}/${sysconfdir}/dbus-1/system.d
 		install -d ${D}/${datadir}/dbus-1/system-services
