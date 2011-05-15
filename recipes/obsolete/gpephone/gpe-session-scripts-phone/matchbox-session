@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# host session applications
-#. /etc/X11/Xsession
-if [ -x /etc/X11/phonesession ]; then
-	. /etc/X11/phonesession
-fi
