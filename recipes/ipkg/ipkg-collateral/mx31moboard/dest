@@ -1,3 +1,0 @@
-dest root /
-dest sd0 /media/card0/packages/
-dest sd1 /media/card1/packages
