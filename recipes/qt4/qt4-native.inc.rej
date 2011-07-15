@@ -1,0 +1,19 @@
+--- recipes/qt4/qt4-native.inc
++++ recipes/qt4/qt4-native.inc
+@@ -6,7 +6,7 @@
+ LICENSE = "GPL"
+ PROVIDES = "qt4-tools-native"
+ 
+-INC_PR = "r0"
++INC_PR = "r1"
+ 
+ inherit native
+ 
+@@ -51,6 +51,7 @@
+   src/gui \
+   src/testlib \
+   src/qt3support \
++  tools/linguist/lrelease \
+ "
+ 
+ do_compile() {
