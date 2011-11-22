@@ -6,6 +6,7 @@ PR = "r10"
 NATIVE_INSTALL_WORKS = "1"
 INHIBIT_DEFAULT_DEPS = "1"
 PATCHTOOL = "patch"
+EXTRA_OEMAKE = 'LD="${CCLD}"'
 
 # 5.10.1 has this module built-in
 PROVIDES += "libmodule-build-perl-native"
