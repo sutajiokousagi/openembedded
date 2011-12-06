@@ -30,8 +30,6 @@ S = "${WORKDIR}/perl-${PV}"
 
 inherit native
 
-LDFLAGS += "-lpthread"
-
 do_configure () {
     ./Configure \
         -Dcc="${CC}" \
