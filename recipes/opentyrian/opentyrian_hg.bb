@@ -30,7 +30,7 @@ do_install() {
 
 	install -m 0755 opentyrian ${D}${bindir}
 	install -m 0644 linux/man/opentyrian.6 ${D}${mandir}/man6
-	install -m 0644 -T linux/icons/tyrian-48.png ${D}${datadir}/pixmaps/opentyrian.png
+	install -m 0644 linux/icons/tyrian-48.png ${D}${datadir}/pixmaps/opentyrian.png
 	install -m 0644 linux/opentyrian.desktop ${D}${datadir}/applications
 	install -m 0644 ${WORKDIR}/tyrian21/* ${D}${datadir}/opentyrian/data
 }
