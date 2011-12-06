@@ -13,6 +13,7 @@ inherit autotools
 EXTRA_OECONF = "--host=${HOST_SYS} \
 		--backend=sdl \
 		--with-sdl-prefix=${STAGING_BINDIR_CROSS} \
+		--disable-hq-scalers \
 		--disable-alsa \
 		--prefix=${prefix} \
 		--with-ogg-prefix=${STAGING_LIBDIR}/.. \
