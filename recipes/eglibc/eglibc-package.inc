@@ -37,7 +37,7 @@ USE_LDCONFIG ?= "1"
 PKGSUFFIX = ""
 PKGSUFFIX_virtclass-nativesdk = "-nativesdk"
 
-PACKAGES = "${PN}-dbg ${PN} catchsegv${PKGSUFFIX} sln${PKGSUFFIX} nscd${PKGSUFFIX} ldd${PKGSUFFIX} localedef${PKGSUFFIX} ${PN}-utils ${PN}-pic eglibc-doc eglibc-locale libcidn libmemusage libsegfault${PKGSUFFIX} eglibc-extra-nss eglibc-thread-db eglibc-pcprofile ${PN}-dev ${PN}-static"
+PACKAGES = "${PN}-dbg ${PN} catchsegv${PKGSUFFIX} sln${PKGSUFFIX} nscd${PKGSUFFIX} ldd${PKGSUFFIX} localedef${PKGSUFFIX} ${PN}-utils ${PN}-pic eglibc-doc eglibc-locale libcidn libmemusage libsegfault${PKGSUFFIX} eglibc-extra-nss eglibc-thread-db eglibc-pcprofile ${PN}-dev ${PN}-dev-static ${PN}-static"
 
 PACKAGES_DYNAMIC = " \
 		    glibc-gconv-*${PKGSUFFIX} glibc-charmap-* glibc-localedata-* glibc-binary-localedata-* \
@@ -48,6 +48,7 @@ RPROVIDES_eglibc = "glibc"
 RPROVIDES_eglibc-utils = "glibc-utils"
 RPROVIDES_eglibc-pic = "glibc-pic"
 RPROVIDES_eglibc-dev = "glibc-dev"
+RPROVIDES_eglibc-dev-static = "glibc-dev-static"
 RPROVIDES_eglibc-doc = "glibc-doc"
 RPROVIDES_eglibc-locale = "glibc-locale"
 RPROVIDES_eglibc-extra-nss = "glibc-extra-nss"
@@ -69,8 +70,8 @@ FILES_libmemusage = "${base_libdir}/libmemusage.so"
 FILES_eglibc-extra-nss = "${base_libdir}/libnss*"
 FILES_sln = "/sbin/sln"
 FILES_eglibc-pic = "${libdir}/*_pic.a ${libdir}/*_pic.map ${libdir}/libc_pic/"
-FILES_eglibc-dev_append += "${bindir}/rpcgen ${libdir}/*.a \
-	${base_libdir}/*.a ${base_libdir}/*.o ${datadir}/aclocal"
+FILES_eglibc-dev-static += "${base_libdir}/*.a ${base_libdir}/*.o ${libdir}/*.a"
+FILES_eglibc-dev_append += "${bindir}/rpcgen ${datadir}/aclocal"
 FILES_nscd${PKGSUFFIX} = "${sbindir}/nscd* ${sysconfdir}/nscd* ${sysconfdir}/init.d/nscd*"
 FILES_eglibc-utils = "${bindir}/* ${sbindir}/*"
 FILES_eglibc-gconv = "${libdir}/gconv/*"
